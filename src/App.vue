@@ -1,8 +1,8 @@
 <template>
-  <my-input
+  <MyInput
       v-model="text"
   />
-  <my-input
+  <MyInput
       v-model="text"
   />
 
@@ -14,23 +14,11 @@
   </div>
 </template>
 
-<script>
-import MyInput from './components/MyInput.vue'
-import {ref} from "vue";
+<script setup>
+import { ref } from 'vue'
+import MyInput from "@/components/MyInput.vue";
 
-export default {
-  name: 'App',
-  components: {
-    MyInput
-  },
-  setup(){
-    const text = ref();
-
-    return {
-      text
-    }
-  }
-}
+const text = ref('')
 </script>
 
 <style>

@@ -4,26 +4,18 @@
         type="text"
         class="input"
         :value="modelValue"
-        @input="updateInput"
+        @input="$emit('update:modelValue', $event.target.value)"
     >
     <button
-      @click="updateInput"
+      @click="$emit('update:modelValue', '')"
     >remove</button>
   </div>
 </template>
 
-<script>
-export default {
-  name: "my-input",
-  props: {
-    modelValue: [String, Number],
-  },
-  methods: {
-    updateInput(event){
-      this.$emit('update:modelValue', event.target.value)
-    },
-  }
-}
+<script setup>
+import {defineEmits, defineProps} from 'vue'
+  defineProps(['modelValue'])
+  defineEmits(['update:modelValue'])
 </script>
 
 <style scoped>
