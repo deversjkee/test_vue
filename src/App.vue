@@ -1,30 +1,33 @@
 <template>
   <my-input
-      v-model="inputText"
+      v-model="text"
   />
   <my-input
-      v-model="inputText"
+      v-model="text"
   />
 
   <br>
   <br>
 
   <div class="result">
-    <span>{{inputText}}</span>
+    <span>{{text}}</span>
   </div>
 </template>
 
 <script>
 import MyInput from './components/MyInput.vue'
+import {ref} from "vue";
 
 export default {
   name: 'App',
   components: {
     MyInput
   },
-  data(){
+  setup(){
+    const text = ref();
+
     return {
-      inputText: '',
+      text
     }
   }
 }
