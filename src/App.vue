@@ -1,26 +1,45 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <my-input
+      v-model="inputText"
+  />
+  <my-input
+      v-model="inputText"
+  />
+
+  <br>
+  <br>
+
+  <div class="result">
+    <span>{{inputText}}</span>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MyInput from './components/MyInput.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MyInput
+  },
+  data(){
+    return {
+      inputText: '',
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  *{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 680px;
+  }
+  .app {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+  }
 </style>
